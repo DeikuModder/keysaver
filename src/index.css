@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.defaultBkg {
+  background-color: #323232;
+}
+
+input,
+select,
+textarea {
+  outline: none;
+  border-radius: 8px;
+  padding: 4px;
+}
