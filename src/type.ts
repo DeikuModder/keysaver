@@ -1,7 +1,6 @@
 export interface userInformation {
   username: string;
   password: string;
-  isAuthenticated: boolean;
 }
 
 export interface SecurityQuestions {
@@ -11,4 +10,18 @@ export interface SecurityQuestions {
   answer2: string;
   question3: string;
   answer3: string;
+}
+
+export interface PasswordItem {
+  id?: `${string}-${string}-${string}-${string}-${string}`;
+  title: string;
+  periodicity:
+    | "very often"
+    | "often"
+    | "not so often"
+    | "rarely used"
+    | "once a year"
+    | "";
+  password: string;
+  lastModified: string;
 }

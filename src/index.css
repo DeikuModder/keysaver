@@ -13,3 +13,12 @@ textarea {
   border-radius: 8px;
   padding: 4px;
 }
+
+.modal {
+  scale: 1;
+  transition: scale 0.3s ease-in-out, display 0.3s ease allow-discrete;
+
+  @starting-style {
+    scale: 0;
+  }
+}

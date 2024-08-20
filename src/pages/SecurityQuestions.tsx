@@ -1,135 +1,93 @@
-import { FormEventHandler, useState } from "react";
+import { FormEventHandler, useEffect, useState } from "react";
 import LABEL from "../components/Common/LABEL";
 import { handleInputChange } from "../utils/handleInputChange";
-import ADD_BTN from "../components/Common/ADD_BTN";
-import { securityQuestionsArr } from "../utils/questions";
+import { useNavigate } from "react-router";
 import useGeneralProvider from "../hooks/useGeneralProvider";
+import ADD_BTN from "../components/Common/ADD_BTN";
 
 const SecurityQuestions = () => {
-  const [questions, setQuestions] = useState({
-    question1: "",
+  const [answers, setAnswers] = useState({
     answer1: "",
-    question2: "",
     answer2: "",
-    question3: "",
     answer3: "",
   });
-  const { setSecurityQuestions, userData, setUserData } = useGeneralProvider();
+  const { handleLogin, securityQuestions } = useGeneralProvider();
+  const navigate = useNavigate();
+  const [isError, setIsError] = useState("");
 
-  const filteredQuestions = securityQuestionsArr.filter((question) => {
-    return !Object.values(questions).includes(question);
-  });
+  useEffect(() => {
+    if (isError) {
+      setTimeout(() => {
+        setIsError("");
+      }, 4000);
+    }
+  }, [isError]);
 
-  const handleSaveQuestions: FormEventHandler<HTMLFormElement> = (e) => {
+  const handleConfirmQuestions: FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
 
-    setUserData({ ...userData, isAuthenticated: true });
-    setSecurityQuestions(questions);
+    if (
+      answers.answer1 !== securityQuestions.answer1 ||
+      answers.answer2 !== securityQuestions.answer2 ||
+      answers.answer3 !== securityQuestions.answer3
+    ) {
+      return setIsError("Some of your answers are incorrect");
+    }
+
+    handleLogin();
+    navigate("/");
   };
 
   return (
     <section className="min-h-[100dvh] flex flex-col justify-center items-center">
       <form
         className="flex flex-col items-center gap-4"
-        onSubmit={handleSaveQuestions}
+        onSubmit={handleConfirmQuestions}
       >
         <div className="flex flex-col gap-2">
-          <LABEL title="Question 1" flexDirection="flex-col text-white">
-            <select
-              value={questions.question1}
-              onChange={handleInputChange("question1", setQuestions)}
-              className="text-neutral-900"
-              required
-            >
-              <option value="">Select question</option>
-              {securityQuestionsArr.map((question, index) => {
-                return (
-                  <option
-                    key={`${question}-${index}`}
-                    value={question}
-                    disabled={!filteredQuestions.includes(question)}
-                  >
-                    {question}
-                  </option>
-                );
-              })}
-            </select>
-          </LABEL>
+          <h3 className="text-xl text-white font-semibold">
+            {securityQuestions.question1}
+          </h3>
 
           <LABEL title="Answer 1" flexDirection="flex-col text-white">
             <input
-              value={questions.answer1}
-              onChange={handleInputChange("answer1", setQuestions)}
+              value={answers.answer1}
+              onChange={handleInputChange("answer1", setAnswers)}
               required
               className="text-black w-full"
             />
           </LABEL>
 
-          <LABEL title="Question 2" flexDirection="flex-col text-white">
-            <select
-              value={questions.question2}
-              onChange={handleInputChange("question2", setQuestions)}
-              className="text-neutral-900"
-              required
-            >
-              <option value="">Select question</option>
-              {securityQuestionsArr.map((question, index) => {
-                return (
-                  <option
-                    key={`${question}-${index}`}
-                    value={question}
-                    disabled={!filteredQuestions.includes(question)}
-                  >
-                    {question}
-                  </option>
-                );
-              })}
-            </select>
-          </LABEL>
+          <h3 className="text-xl text-white font-semibold">
+            {securityQuestions.question2}
+          </h3>
 
           <LABEL title="Answer 2" flexDirection="flex-col text-white">
             <input
-              value={questions.answer2}
-              onChange={handleInputChange("answer2", setQuestions)}
+              value={answers.answer2}
+              onChange={handleInputChange("answer2", setAnswers)}
               required
               className="text-black w-full"
             />
           </LABEL>
 
-          <LABEL title="Question 3" flexDirection="flex-col text-white">
-            <select
-              value={questions.question3}
-              onChange={handleInputChange("question3", setQuestions)}
-              className="text-neutral-900"
-              required
-            >
-              <option value="">Select question</option>
-              {securityQuestionsArr.map((question, index) => {
-                return (
-                  <option
-                    key={`${question}-${index}`}
-                    value={question}
-                    disabled={!filteredQuestions.includes(question)}
-                  >
-                    {question}
-                  </option>
-                );
-              })}
-            </select>
-          </LABEL>
+          <h3 className="text-xl text-white font-semibold">
+            {securityQuestions.question3}
+          </h3>
 
           <LABEL title="Answer 3" flexDirection="flex-col text-white">
             <input
-              value={questions.answer3}
-              onChange={handleInputChange("answer3", setQuestions)}
+              value={answers.answer3}
+              onChange={handleInputChange("answer3", setAnswers)}
               required
               className="text-black w-full"
             />
           </LABEL>
         </div>
 
-        <ADD_BTN title="Save" type="submit" />
+        <ADD_BTN title="Confirm" type="submit" />
       </form>
+      {isError && <p className="text-xl font-semibold text-red-500"></p>}
     </section>
   );
 };

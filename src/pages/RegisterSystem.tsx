@@ -1,11 +1,11 @@
 import Register from "./Register";
-import SecurityQuestions from "./SecurityQuestions";
+import SetSecurityQuestions from "./SetSecurityQuestions";
 
 const RegisterSystem = () => {
   return (
     <>
       {window.localStorage.getItem("userInformation") ? (
-        <SecurityQuestions />
+        <SetSecurityQuestions />
       ) : (
         <Register />
       )}

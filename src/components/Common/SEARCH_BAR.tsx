@@ -15,7 +15,7 @@ const SEARCH_BAR = ({
         className=" text-neutral-400 border-r border-slate-500 pr-1"
       />
       <input
-        placeholder="Buscar..."
+        placeholder="Search..."
         className="w-fit bg-transparent border-none"
         value={search}
         onChange={(e) => setSearch(e.target.value)}

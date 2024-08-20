@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLocalStorage } from "../hooks/useLocalStorage";
-import { SecurityQuestions, userInformation } from "../type";
+import { PasswordItem, SecurityQuestions, userInformation } from "../type";
 
 export const DataContext = React.createContext(
   {} as ReturnType<typeof useData>
@@ -10,7 +10,6 @@ const useData = () => {
   const [userInfo, setUserInfo] = useLocalStorage("userInformation", {
     username: "",
     password: "",
-    isAuthenticated: false,
   });
   const [questions, setQuestions] = useLocalStorage("securityQuestions", {
     question1: "",
@@ -20,6 +19,17 @@ const useData = () => {
     question3: "",
     answer3: "",
   });
+  const [keys, setKeys] = useLocalStorage("keysArr", [] as PasswordItem[]);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [passwordAttempts, setPasswordAttempts] = useState(3);
+
+  const handleLogin = () => {
+    setIsAuthenticated(true);
+  };
+
+  const handleLogout = () => {
+    setIsAuthenticated(false);
+  };
 
   const userData = userInfo as userInformation;
 
@@ -31,11 +41,22 @@ const useData = () => {
     value: SecurityQuestions
   ) => void;
 
+  const keysItem = keys as PasswordItem[];
+
+  const setKeysItem = setKeys as (value: PasswordItem[]) => void;
+
   return {
     userData,
     setUserData,
     securityQuestions,
     setSecurityQuestions,
+    isAuthenticated,
+    handleLogin,
+    handleLogout,
+    passwordAttempts,
+    setPasswordAttempts,
+    keysItem,
+    setKeysItem,
   };
 };
 

@@ -16,14 +16,16 @@ const CONTENT = ({
   title?: string;
 }) => {
   return (
-    <div>
-      <div className="flex items-center text-black text-base bg-slate-300">
+    <div className="modal">
+      <div className="flex items-center text-black text-base bg-[#323232] rounded-t-xl">
         <p className="w-[90%] px-2 font-semibold">{title}</p>
         <div className="w-[10%]">
           <CLOSE_BTN onClose={onClose} />
         </div>
       </div>
-      <div className={`bg-white ${width} ${height} overflow-auto`}>
+      <div
+        className={`bg-[#323232] rounded-b-xl ${width} ${height} overflow-auto`}
+      >
         {children}
       </div>
     </div>
