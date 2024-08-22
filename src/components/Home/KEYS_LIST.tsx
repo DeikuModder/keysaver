@@ -1,8 +1,18 @@
 import useGeneralProvider from "../../hooks/useGeneralProvider";
 import KEY_ITEM from "./KEY_ITEM";
 
-const KEYS_LIST = () => {
+const KEYS_LIST = ({ debounceSearch }: { debounceSearch: string }) => {
   const { userData, keysItem, setKeysItem } = useGeneralProvider();
+
+  const filteredArr = keysItem.filter((key) => {
+    const searchMatch = key.title
+      .toLocaleLowerCase()
+      .includes(debounceSearch.toLocaleLowerCase());
+
+    if (!searchMatch) return false;
+
+    return true;
+  });
 
   const handleDelete = (id: string) => {
     const newKeysArr = keysItem.filter((keyItem) => keyItem.id! !== id);
@@ -17,7 +27,7 @@ const KEYS_LIST = () => {
       </h2>
       <ul className="flex flex-col gap-4 overflow-auto md:flex-row md:flex-wrap">
         {keysItem.length > 0 ? (
-          keysItem.map((keyItem) => {
+          filteredArr.map((keyItem) => {
             return <KEY_ITEM keyItem={keyItem} handleDelete={handleDelete} />;
           })
         ) : (

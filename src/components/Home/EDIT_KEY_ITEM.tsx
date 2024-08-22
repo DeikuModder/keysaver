@@ -1,4 +1,4 @@
-import { faAdd } from "@fortawesome/free-solid-svg-icons";
+import { faPen } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import MODAL from "../Common/MODAL";
 import LABEL from "../Common/LABEL";
@@ -11,13 +11,8 @@ import { PasswordItem } from "../../type";
 import useModal from "../../hooks/useModal";
 import SELECT_ICON from "./SELECT_ICON";
 
-const FORM = () => {
-  const [newKey, setNewKey] = useState({
-    title: "",
-    password: "",
-    periodicity: "",
-    icon: "",
-  } as PasswordItem);
+const FORM = ({ keyItem }: { keyItem: PasswordItem }) => {
+  const [newKey, setNewKey] = useState(keyItem);
   const { setKeysItem, keysItem } = useGeneralProvider();
   const { setIsModalOpen } = useModal();
 
@@ -27,7 +22,7 @@ const FORM = () => {
     const date = format(new Date(), "MM/dd/yyyy");
 
     const newKeyItem = {
-      id: crypto.randomUUID(),
+      id: keyItem.id,
       title: newKey.title,
       password: newKey.password,
       periodicity: newKey.periodicity,
@@ -35,7 +30,9 @@ const FORM = () => {
       lastModified: date,
     };
 
-    setKeysItem([...keysItem, newKeyItem]);
+    const newArr = keysItem.filter((key) => key.id !== keyItem.id);
+
+    setKeysItem([...newArr, newKeyItem]);
     setIsModalOpen(false);
   };
 
@@ -77,22 +74,22 @@ const FORM = () => {
 
       <SELECT_ICON setNewKey={setNewKey} />
 
-      <ADD_BTN type="submit" title="Add" />
+      <ADD_BTN type="submit" title="Edit" />
     </form>
   );
 };
 
-const ADD_KEY_ITEM = () => {
+const EDIT_KEY_ITEM = ({ keyItem }: { keyItem: PasswordItem }) => {
   return (
     <MODAL
-      buttonContent={<FontAwesomeIcon icon={faAdd} />}
-      buttonStyle="bg-green-500 text-3xl font-bold rounded-lg p-2 transition-color hover:bg-green-600"
+      buttonContent={<FontAwesomeIcon icon={faPen} />}
+      buttonStyle="text-2xl text-white font-bold rounded-lg p-2 transition-color hover:bg-cyan-600"
       width="w-[300px]"
       height="h-[300px]"
     >
-      <FORM />
+      <FORM keyItem={keyItem} />
     </MODAL>
   );
 };
 
-export default ADD_KEY_ITEM;
+export default EDIT_KEY_ITEM;

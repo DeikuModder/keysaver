@@ -23,5 +23,6 @@ export interface PasswordItem {
     | "once a year"
     | "";
   password: string;
+  icon: string;
   lastModified: string;
 }

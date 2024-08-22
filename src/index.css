@@ -14,6 +14,12 @@ textarea {
   padding: 4px;
 }
 
+details > summary {
+  /* style the arrow */
+  font-size: 18px;
+  color: white;
+}
+
 .modal {
   scale: 1;
   transition: scale 0.3s ease-in-out, display 0.3s ease allow-discrete;

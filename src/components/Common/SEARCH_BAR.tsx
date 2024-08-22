@@ -16,7 +16,7 @@ const SEARCH_BAR = ({
       />
       <input
         placeholder="Search..."
-        className="w-fit bg-transparent border-none"
+        className="w-fit bg-transparent border-none text-white"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />

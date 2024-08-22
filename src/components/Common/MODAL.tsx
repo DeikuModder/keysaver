@@ -17,7 +17,7 @@ const CONTENT = ({
 }) => {
   return (
     <div className="modal">
-      <div className="flex items-center text-black text-base bg-[#323232] rounded-t-xl">
+      <div className="flex items-center text-white text-base bg-[#323232] rounded-t-xl">
         <p className="w-[90%] px-2 font-semibold">{title}</p>
         <div className="w-[10%]">
           <CLOSE_BTN onClose={onClose} />
