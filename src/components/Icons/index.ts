@@ -7,6 +7,7 @@ import LINKEDIN from "./LINKEDIN";
 import MICROSOFT from "./MICROSOFT";
 import NOTION from "./NOTION";
 import OUTLOOK from "./OUTLOOK";
+import RIOT from "./RIOT";
 import SPOTIFY from "./SPOTIFY";
 import SUPABASE from "./SUPABASE";
 import X from "./X";
@@ -24,6 +25,7 @@ const IconsObj = {
   OUTLOOK,
   X,
   MICROSOFT,
+  RIOT,
 };
 
 export default IconsObj;
