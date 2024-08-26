@@ -1,0 +1,26 @@
+{
+  "default": {
+    "primary": "#323232",
+    "secondary": "#292929",
+    "complementary": "#525252",
+    "text": "#fff"
+  },
+  "light": {
+    "primary": "#ededed",
+    "secondary": "#adadad",
+    "complementary": "#fff",
+    "text": "#000"
+  },
+  "cyan": {
+    "primary": "#002b36",
+    "secondary": "#001b21",
+    "complementary": "#00647d",
+    "text": "#fff"
+  },
+  "wine": {
+    "primary": "#851725",
+    "secondary": "#450c13",
+    "complementary": "#cc2137",
+    "text": "#fff"
+  }
+}

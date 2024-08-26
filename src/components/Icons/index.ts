@@ -4,8 +4,12 @@ import GITHUB from "./GITHUB";
 import GOOGLE from "./GOOGLE";
 import INSTAGRAM from "./INSTAGRAM";
 import LINKEDIN from "./LINKEDIN";
+import MICROSOFT from "./MICROSOFT";
 import NOTION from "./NOTION";
+import OUTLOOK from "./OUTLOOK";
 import SPOTIFY from "./SPOTIFY";
+import SUPABASE from "./SUPABASE";
+import X from "./X";
 
 const IconsObj = {
   DISCORD,
@@ -16,6 +20,10 @@ const IconsObj = {
   SPOTIFY,
   LINKEDIN,
   NOTION,
+  SUPABASE,
+  OUTLOOK,
+  X,
+  MICROSOFT,
 };
 
 export default IconsObj;

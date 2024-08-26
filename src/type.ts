@@ -1,6 +1,7 @@
 export interface userInformation {
   username: string;
   password: string;
+  preservedIsAuthenticated?: boolean;
 }
 
 export interface SecurityQuestions {
@@ -25,4 +26,9 @@ export interface PasswordItem {
   password: string;
   icon: string;
   lastModified: string;
+}
+
+export interface LoginPreferences {
+  preserveSession: boolean;
+  loginWithSecurityQuestions: boolean;
 }

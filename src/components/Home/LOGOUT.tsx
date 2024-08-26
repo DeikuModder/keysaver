@@ -7,8 +7,10 @@ const LOGOUT = () => {
 
   return (
     <button
-      className="text-4xl text-neutral-300 font-bold"
-      onClick={handleLogout}
+      className="text-4xl text-neutral-500 font-bold"
+      onClick={() => {
+        handleLogout();
+      }}
     >
       <FontAwesomeIcon icon={faSignOut} />
     </button>

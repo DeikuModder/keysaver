@@ -5,7 +5,7 @@ import { useNavigate } from "react-router";
 import useGeneralProvider from "../hooks/useGeneralProvider";
 import ADD_BTN from "../components/Common/ADD_BTN";
 
-const SecurityQuestions = () => {
+const SecurityQuestions = ({ gotoLink = "/" }: { gotoLink?: string }) => {
   const [answers, setAnswers] = useState({
     answer1: "",
     answer2: "",
@@ -35,7 +35,7 @@ const SecurityQuestions = () => {
     }
 
     handleLogin();
-    navigate("/");
+    navigate(gotoLink);
   };
 
   return (
@@ -45,11 +45,11 @@ const SecurityQuestions = () => {
         onSubmit={handleConfirmQuestions}
       >
         <div className="flex flex-col gap-2">
-          <h3 className="text-xl text-white font-semibold">
+          <h3 className="text-xl font-semibold">
             {securityQuestions.question1}
           </h3>
 
-          <LABEL title="Answer 1" flexDirection="flex-col text-white">
+          <LABEL title="Answer 1" flexDirection="flex-col">
             <input
               value={answers.answer1}
               onChange={handleInputChange("answer1", setAnswers)}
@@ -58,11 +58,11 @@ const SecurityQuestions = () => {
             />
           </LABEL>
 
-          <h3 className="text-xl text-white font-semibold">
+          <h3 className="text-xl font-semibold">
             {securityQuestions.question2}
           </h3>
 
-          <LABEL title="Answer 2" flexDirection="flex-col text-white">
+          <LABEL title="Answer 2" flexDirection="flex-col">
             <input
               value={answers.answer2}
               onChange={handleInputChange("answer2", setAnswers)}
@@ -71,11 +71,11 @@ const SecurityQuestions = () => {
             />
           </LABEL>
 
-          <h3 className="text-xl text-white font-semibold">
+          <h3 className="text-xl font-semibold">
             {securityQuestions.question3}
           </h3>
 
-          <LABEL title="Answer 3" flexDirection="flex-col text-white">
+          <LABEL title="Answer 3" flexDirection="flex-col">
             <input
               value={answers.answer3}
               onChange={handleInputChange("answer3", setAnswers)}

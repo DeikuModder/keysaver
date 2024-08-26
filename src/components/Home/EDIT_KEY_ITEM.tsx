@@ -38,7 +38,7 @@ const FORM = ({ keyItem }: { keyItem: PasswordItem }) => {
 
   return (
     <form className="p-4 flex flex-col gap-4" onSubmit={handleAdd}>
-      <LABEL title="Title" flexDirection="flex-col text-white">
+      <LABEL title="Title" flexDirection="flex-col">
         <input
           value={newKey.title}
           onChange={handleInputChange("title", setNewKey)}
@@ -47,7 +47,7 @@ const FORM = ({ keyItem }: { keyItem: PasswordItem }) => {
         />
       </LABEL>
 
-      <LABEL title="Password" flexDirection="flex-col text-white">
+      <LABEL title="Password" flexDirection="flex-col">
         <input
           value={newKey.password}
           onChange={handleInputChange("password", setNewKey)}
@@ -56,7 +56,7 @@ const FORM = ({ keyItem }: { keyItem: PasswordItem }) => {
         />
       </LABEL>
 
-      <LABEL title="Periodicity" flexDirection="flex-col text-white">
+      <LABEL title="Periodicity" flexDirection="flex-col">
         <select
           value={newKey.periodicity}
           onChange={handleInputChange("periodicity", setNewKey)}
@@ -83,7 +83,7 @@ const EDIT_KEY_ITEM = ({ keyItem }: { keyItem: PasswordItem }) => {
   return (
     <MODAL
       buttonContent={<FontAwesomeIcon icon={faPen} />}
-      buttonStyle="text-2xl text-white font-bold rounded-lg p-2 transition-color hover:bg-cyan-600"
+      buttonStyle="text-2xl font-bold rounded-lg p-2 transition-color hover:bg-cyan-600"
       width="w-[300px]"
       height="h-[300px]"
     >

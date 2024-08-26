@@ -41,7 +41,7 @@ const FORM = () => {
 
   return (
     <form className="p-4 flex flex-col gap-4" onSubmit={handleAdd}>
-      <LABEL title="Title" flexDirection="flex-col text-white">
+      <LABEL title="Title" flexDirection="flex-col">
         <input
           value={newKey.title}
           onChange={handleInputChange("title", setNewKey)}
@@ -50,7 +50,7 @@ const FORM = () => {
         />
       </LABEL>
 
-      <LABEL title="Password" flexDirection="flex-col text-white">
+      <LABEL title="Password" flexDirection="flex-col">
         <input
           value={newKey.password}
           onChange={handleInputChange("password", setNewKey)}
@@ -59,7 +59,7 @@ const FORM = () => {
         />
       </LABEL>
 
-      <LABEL title="Periodicity" flexDirection="flex-col text-white">
+      <LABEL title="Periodicity" flexDirection="flex-col">
         <select
           value={newKey.periodicity}
           onChange={handleInputChange("periodicity", setNewKey)}

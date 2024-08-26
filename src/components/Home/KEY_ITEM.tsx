@@ -18,7 +18,7 @@ const KEY_ITEM = ({
     <div className="flex items-center justify-between gap-2 p-4 border-4 border-[#9B9B9B] rounded-xl min-w-[300px]">
       <ICON iconName={keyItem.icon} />
       <div className="flex flex-col items-center">
-        <h2 className="text-lg font-bold text-white">{keyItem.title}</h2>
+        <h2 className="text-lg font-bold">{keyItem.title}</h2>
         <PERIODICITY_TEXT periodicity={keyItem.periodicity} />
       </div>
       <div className="flex gap-2 items-center">

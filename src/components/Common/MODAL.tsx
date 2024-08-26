@@ -1,6 +1,7 @@
 import CLOSE_BTN from "./CLOSE_BTN";
 import ModalProvider from "../../providers/ModalProvider";
 import useModal from "../../hooks/useModal";
+import useGeneralProvider from "../../hooks/useGeneralProvider";
 
 const CONTENT = ({
   children,
@@ -15,16 +16,26 @@ const CONTENT = ({
   height: string;
   title?: string;
 }) => {
+  const { appTheme } = useGeneralProvider();
+
   return (
     <div className="modal">
-      <div className="flex items-center text-white text-base bg-[#323232] rounded-t-xl">
+      <div
+        className="flex items-center text-base rounded-t-xl"
+        style={{
+          backgroundColor: appTheme.secondary ? appTheme.secondary : "#292929",
+        }}
+      >
         <p className="w-[90%] px-2 font-semibold">{title}</p>
         <div className="w-[10%]">
           <CLOSE_BTN onClose={onClose} />
         </div>
       </div>
       <div
-        className={`bg-[#323232] rounded-b-xl ${width} ${height} overflow-auto`}
+        className={`rounded-b-xl ${width} ${height} overflow-auto`}
+        style={{
+          backgroundColor: appTheme.primary ? appTheme.primary : "#323232",
+        }}
       >
         {children}
       </div>

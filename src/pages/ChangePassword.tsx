@@ -1,19 +1,20 @@
 import { FormEventHandler, useEffect, useState } from "react";
-import ADD_BTN from "../components/Common/ADD_BTN";
+import useGeneralProvider from "../hooks/useGeneralProvider";
 import LABEL from "../components/Common/LABEL";
 import { handleInputChange } from "../utils/handleInputChange";
+import ADD_BTN from "../components/Common/ADD_BTN";
 import ErrorToast from "../components/Toasts/ErrorToast";
-import useGeneralProvider from "../hooks/useGeneralProvider";
-import TITLE from "../components/Common/TITLE";
+import LEGEND from "../components/Common/LEGEND";
+import { useNavigate } from "react-router";
 
-const Register = () => {
+const ChangePassword = () => {
   const [userInput, setUserInput] = useState({
-    username: "",
     password: "",
     confirmPassword: "",
   });
   const [isError, setIsError] = useState("");
   const { userData, setUserData } = useGeneralProvider();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (isError) {
@@ -23,38 +24,34 @@ const Register = () => {
     }
   }, [isError]);
 
-  const handleRegister: FormEventHandler<HTMLFormElement> = (e) => {
+  const handleChangePassword: FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
 
     if (userInput.password !== userInput.confirmPassword) {
       return setIsError("The passwords doesn't match");
     }
 
+    if (userInput.password === userData.password) {
+      return setIsError("The new password can't be the same as the old one");
+    }
+
     setUserData({
       ...userData,
-      username: userInput.username,
       password: userInput.password,
     });
+
+    navigate("/");
   };
 
   return (
     <section className="min-h-[100dvh] flex flex-col justify-center items-center">
-      <TITLE />
-
       <form
         className="flex flex-col items-center gap-4"
-        onSubmit={handleRegister}
+        onSubmit={handleChangePassword}
       >
-        <LABEL title="Username" flexDirection="flex-col">
-          <input
-            value={userInput.username}
-            onChange={handleInputChange("username", setUserInput)}
-            className="text-black"
-            required
-          />
-        </LABEL>
+        <LEGEND title="Change password" />
 
-        <LABEL title="Set password" flexDirection="flex-col">
+        <LABEL title="New password" flexDirection="flex-col">
           <input
             value={userInput.password}
             onChange={handleInputChange("password", setUserInput)}
@@ -81,4 +78,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default ChangePassword;

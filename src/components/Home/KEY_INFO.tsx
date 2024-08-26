@@ -9,19 +9,19 @@ const KEY_INFO = ({ keyItem }: { keyItem: PasswordItem }) => {
         <ICON iconName={keyItem.icon} />
 
         <div className="flex flex-col">
-          <h2 className="text-3xl font-bold text-white">{keyItem.title}</h2>
+          <h2 className="text-3xl font-bold">{keyItem.title}</h2>
           <PERIODICITY_TEXT periodicity={keyItem.periodicity} />
         </div>
       </div>
 
-      <div className="text-xl text-white font-semibold">
+      <div className="text-xl font-semibold">
         <h3>Password</h3>
-        <p className="font-normal text-neutral-300">{keyItem.password}</p>
+        <p className="font-normal">{keyItem.password}</p>
       </div>
 
-      <div className="text-xl text-white font-semibold mt-8">
+      <div className="text-xl font-semibold mt-8">
         <h3>Last modified</h3>
-        <p className="font-normal text-neutral-300">{keyItem.lastModified}</p>
+        <p className="font-normal">{keyItem.lastModified}</p>
       </div>
     </div>
   );

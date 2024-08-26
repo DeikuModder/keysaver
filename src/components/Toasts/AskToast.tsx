@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./styles/toast.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faQuestion } from "@fortawesome/free-solid-svg-icons";
+import useGeneralProvider from "../../hooks/useGeneralProvider";
 
 interface Props {
   content: JSX.Element | string;
@@ -26,6 +27,7 @@ const AskToast: React.FC<Props> = ({
   textBorderColor = "border-red-600",
 }) => {
   const [visible, setVisible] = useState(true);
+  const { appTheme } = useGeneralProvider();
 
   const handleYes = () => {
     fn();
@@ -37,7 +39,10 @@ const AskToast: React.FC<Props> = ({
     <>
       {visible && (
         <div
-          className={`modal bg-[#323232] w-80 h-32 text-white rounded-xl p-2 flex gap-2 transition-transform z-50`}
+          className={`modal w-80 h-32 text-white rounded-xl p-2 flex gap-2 transition-transform z-50`}
+          style={{
+            backgroundColor: appTheme.primary ? appTheme.primary : "#323232",
+          }}
         >
           <div
             className={`${iconColor} w-[20%] flex flex-col items-center rounded-xl justify-center text-2xl`}

@@ -51,7 +51,7 @@ const Login = () => {
       <TITLE />
 
       <form className="flex flex-col items-center gap-4" onSubmit={handleLogin}>
-        <LABEL title="Password" flexDirection="flex-col text-white">
+        <LABEL title="Password" flexDirection="flex-col">
           <input
             value={userInput.password}
             onChange={handleInputChange("password", setUserInput)}
@@ -61,7 +61,7 @@ const Login = () => {
           />
         </LABEL>
 
-        <LABEL title="Confirm password" flexDirection="flex-col text-white">
+        <LABEL title="Confirm password" flexDirection="flex-col">
           <input
             value={userInput.confirmPassword}
             onChange={handleInputChange("confirmPassword", setUserInput)}

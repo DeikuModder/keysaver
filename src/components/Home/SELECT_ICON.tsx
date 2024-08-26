@@ -2,6 +2,7 @@ import { useState } from "react";
 import { PasswordItem } from "../../type";
 import IconsObj from "../Icons";
 import ICON from "./ICON";
+import useGeneralProvider from "../../hooks/useGeneralProvider";
 
 const keysToStrings = Object.keys(IconsObj);
 
@@ -11,6 +12,7 @@ const SELECT_ICON = ({
   setNewKey: React.Dispatch<React.SetStateAction<PasswordItem>>;
 }) => {
   const [iconName, setIconName] = useState("");
+  const { appTheme } = useGeneralProvider();
 
   const handleAdd = (name: string) => {
     setNewKey((prev) => ({ ...prev, icon: name }));
@@ -20,7 +22,14 @@ const SELECT_ICON = ({
     <div className="flex gap-2">
       <ICON iconName={iconName} />
       <details>
-        <div className="bg-[#323232] max-w-[170px] p-2 rounded-xl flex items-center gap-4 flex-wrap">
+        <div
+          className="max-w-[170px] p-2 rounded-xl flex items-center gap-4 flex-wrap"
+          style={{
+            backgroundColor: appTheme.secondary
+              ? appTheme.secondary
+              : "#adadad",
+          }}
+        >
           {keysToStrings.map((icon, index) => {
             return (
               <button

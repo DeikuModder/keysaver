@@ -1,0 +1,29 @@
+.checkbox {
+  position: relative;
+  display: inline-block;
+}
+
+.checkbox-icon {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  border: 1px solid #d13535;
+  border-radius: 2px;
+  background-color: #d13535;
+  transition: transform 0.2s ease-in-out;
+}
+
+.checkbox input[type="checkbox"]:checked + .checkbox-icon {
+  background-color: #1bc955;
+  border-color: #1bc955;
+  transform: translate(20px);
+}
+
+.checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}

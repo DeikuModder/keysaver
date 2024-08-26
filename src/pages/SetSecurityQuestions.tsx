@@ -38,7 +38,7 @@ const SetSecurityQuestions = () => {
         onSubmit={handleSaveQuestions}
       >
         <div className="flex flex-col gap-2">
-          <LABEL title="Question 1" flexDirection="flex-col text-white">
+          <LABEL title="Question 1" flexDirection="flex-col">
             <select
               value={questions.question1}
               onChange={handleInputChange("question1", setQuestions)}
@@ -60,7 +60,7 @@ const SetSecurityQuestions = () => {
             </select>
           </LABEL>
 
-          <LABEL title="Answer 1" flexDirection="flex-col text-white">
+          <LABEL title="Answer 1" flexDirection="flex-col">
             <input
               value={questions.answer1}
               onChange={handleInputChange("answer1", setQuestions)}
@@ -69,7 +69,7 @@ const SetSecurityQuestions = () => {
             />
           </LABEL>
 
-          <LABEL title="Question 2" flexDirection="flex-col text-white">
+          <LABEL title="Question 2" flexDirection="flex-col">
             <select
               value={questions.question2}
               onChange={handleInputChange("question2", setQuestions)}
@@ -91,7 +91,7 @@ const SetSecurityQuestions = () => {
             </select>
           </LABEL>
 
-          <LABEL title="Answer 2" flexDirection="flex-col text-white">
+          <LABEL title="Answer 2" flexDirection="flex-col">
             <input
               value={questions.answer2}
               onChange={handleInputChange("answer2", setQuestions)}
@@ -100,7 +100,7 @@ const SetSecurityQuestions = () => {
             />
           </LABEL>
 
-          <LABEL title="Question 3" flexDirection="flex-col text-white">
+          <LABEL title="Question 3" flexDirection="flex-col">
             <select
               value={questions.question3}
               onChange={handleInputChange("question3", setQuestions)}
@@ -122,7 +122,7 @@ const SetSecurityQuestions = () => {
             </select>
           </LABEL>
 
-          <LABEL title="Answer 3" flexDirection="flex-col text-white">
+          <LABEL title="Answer 3" flexDirection="flex-col">
             <input
               value={questions.answer3}
               onChange={handleInputChange("answer3", setQuestions)}

@@ -11,13 +11,14 @@ select,
 textarea {
   outline: none;
   border-radius: 8px;
+  border: 1px solid;
   padding: 4px;
 }
 
 details > summary {
   /* style the arrow */
   font-size: 18px;
-  color: white;
+  color: #0cee50;
 }
 
 .modal {

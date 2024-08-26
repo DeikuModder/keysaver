@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import { useLocalStorage } from "../hooks/useLocalStorage";
-import { PasswordItem, SecurityQuestions, userInformation } from "../type";
+import {
+  LoginPreferences,
+  PasswordItem,
+  SecurityQuestions,
+  userInformation,
+} from "../type";
 
 export const DataContext = React.createContext(
   {} as ReturnType<typeof useData>
@@ -10,6 +15,7 @@ const useData = () => {
   const [userInfo, setUserInfo] = useLocalStorage("userInformation", {
     username: "",
     password: "",
+    preservedIsAuthenticated: false,
   });
   const [questions, setQuestions] = useLocalStorage("securityQuestions", {
     question1: "",
@@ -19,17 +25,19 @@ const useData = () => {
     question3: "",
     answer3: "",
   });
+  const [login, setLogin] = useLocalStorage("loginPreferences", {
+    preserveSession: false,
+    loginWithSecurityQuestions: false,
+  });
+  const [theme, setTheme] = useLocalStorage("theme", {
+    primary: "#323232",
+    secondary: "#292929",
+    complementary: "#525252",
+    text: "#fff",
+  });
   const [keys, setKeys] = useLocalStorage("keysArr", [] as PasswordItem[]);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [passwordAttempts, setPasswordAttempts] = useState(3);
-
-  const handleLogin = () => {
-    setIsAuthenticated(true);
-  };
-
-  const handleLogout = () => {
-    setIsAuthenticated(false);
-  };
 
   const userData = userInfo as userInformation;
 
@@ -45,6 +53,36 @@ const useData = () => {
 
   const setKeysItem = setKeys as (value: PasswordItem[]) => void;
 
+  const loginPreferences = login as LoginPreferences;
+
+  const setLoginPreferences = setLogin as (value: LoginPreferences) => void;
+
+  const appTheme = theme as {
+    primary: string;
+    secondary: string;
+    complementary: string;
+    text: string;
+    name: string;
+  };
+
+  const setAppTheme = setTheme as (value: {
+    primary: string;
+    secondary: string;
+    complementary: string;
+    text: string;
+    name: string;
+  }) => void;
+
+  const handleLogin = () => {
+    setIsAuthenticated(true);
+    setUserData({ ...userData, preservedIsAuthenticated: true });
+  };
+
+  const handleLogout = () => {
+    setIsAuthenticated(false);
+    setUserData({ ...userData, preservedIsAuthenticated: false });
+  };
+
   return {
     userData,
     setUserData,
@@ -57,6 +95,10 @@ const useData = () => {
     setPasswordAttempts,
     keysItem,
     setKeysItem,
+    loginPreferences,
+    setLoginPreferences,
+    appTheme,
+    setAppTheme,
   };
 };
 

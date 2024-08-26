@@ -15,6 +15,10 @@ const useGeneralProvider = () => {
     setPasswordAttempts,
     keysItem,
     setKeysItem,
+    loginPreferences,
+    setLoginPreferences,
+    appTheme,
+    setAppTheme,
   } = useData;
 
   return {
@@ -29,6 +33,10 @@ const useGeneralProvider = () => {
     setPasswordAttempts,
     keysItem,
     setKeysItem,
+    loginPreferences,
+    setLoginPreferences,
+    appTheme,
+    setAppTheme,
   };
 };
 
