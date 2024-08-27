@@ -68,12 +68,3 @@ jobs:
             See the assets to download this version and install.
           releaseDraft: true
           prerelease: false
-
-      - name: Automate GitHub Releases
-  # You may pin to the exact commit or the version.
-  # uses: nekofar/create-github-release@9ec0f8de0cdc2a6f1350c70e6c3435c3a1e28707
-        uses: nekofar/create-github-release@v1.0.12
-        with:
-    # The tag name for the release (e.g., v1.0.0)
-          tag: "V_VERSION_"
-          
