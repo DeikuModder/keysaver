@@ -20,20 +20,11 @@ jobs:
       run: npm install
 
     - name: Build Tauri app
-      uses: tauri-apps/tauri-action@v0
+      run: npm run tauri build
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         TAURI_PRIVATE_KEY: ${{ secrets.TAURI_PRIVATE_KEY }}
-        TAURI_KEY_PASSWORD: ${{ secrets.TAURI_KEY_PASSWORD }}
-      with:
-        # tauri-action replaces \_\_VERSION\_\_ with the app version
-        tagName: ${{ github.ref_name }}
-        releaseName: "Keysaver v__VERSION__"
-        releaseBody: |
-          ${{steps.build_changelog.outputs.changelog}}
-          See the assets to download this version and install.
-        releaseDraft: true
-        prerelease: false
+        TAURI_KEY_PASSWORD: ${{ secrets.TAURI_KEY_PASSWORD }
 
     - name: Automate GitHub Releases
   # You may pin to the exact commit or the version.
