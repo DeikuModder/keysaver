@@ -70,8 +70,11 @@ jobs:
           releaseDraft: true
           prerelease: false
 
-      - name: GitHub Releases
+      - name: Github Release
   # You may pin to the exact commit or the version.
-  # uses: fnkr/github-action-ghr@96b1448dc6162f370067e1de51e856e733a76b4f
-        uses: fnkr/github-action-ghr@v1.3
+  # uses: elgohr/Github-Release-Action@729911f8c5f0f9deac538484505ddc198ee61d85
+        uses: elgohr/Github-Release-Action@v5
+        with:
+    # The name of the release to publish
+          title: 'New version'
           
