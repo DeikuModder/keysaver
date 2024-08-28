@@ -11,13 +11,16 @@ import { Link } from "react-router-dom";
 import CHECKBOX from "../Common/CHECKBOX";
 import themesObj from "../../utils/themes.json";
 import GITHUB from "../Icons/GITHUB";
+import packageInfo from "../../../src-tauri/tauri.conf.json";
 
 const CONFIG_ABOUT = () => {
   return (
     <div className="flex flex-col justify-between p-4">
       <div className="flex flex-col gap-4">
         <h2 className="text-xl font-bold">Keysaver</h2>
-        <h4 className="text-xl font-semibold">v 0.1.2</h4>
+        <h4 className="text-xl font-semibold">
+          v{packageInfo.package.version}
+        </h4>
 
         <p>
           Keysaver works completely offline, therefore the only way someone can

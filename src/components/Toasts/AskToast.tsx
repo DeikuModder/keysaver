@@ -39,7 +39,7 @@ const AskToast: React.FC<Props> = ({
     <>
       {visible && (
         <div
-          className={`modal w-80 h-32 text-white rounded-xl p-2 flex gap-2 transition-transform z-50`}
+          className={`modal w-80 h-32 rounded-xl p-2 flex gap-2 transition-transform z-50`}
           style={{
             backgroundColor: appTheme.primary ? appTheme.primary : "#323232",
           }}
