@@ -17,7 +17,7 @@ const CONFIG_ABOUT = () => {
     <div className="flex flex-col justify-between p-4">
       <div className="flex flex-col gap-4">
         <h2 className="text-xl font-bold">Keysaver</h2>
-        <h4 className="text-xl font-semibold">v 0.1.1</h4>
+        <h4 className="text-xl font-semibold">v 0.1.2</h4>
 
         <p>
           Keysaver works completely offline, therefore the only way someone can

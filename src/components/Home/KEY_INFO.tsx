@@ -1,4 +1,5 @@
 import { PasswordItem } from "../../type";
+import CopyToClipboard from "../Common/COPY_TO_CLIPBOARD";
 import ICON from "./ICON";
 import PERIODICITY_TEXT from "./PERIODICITY_TEXT";
 
@@ -16,7 +17,10 @@ const KEY_INFO = ({ keyItem }: { keyItem: PasswordItem }) => {
 
       <div className="text-xl font-semibold">
         <h3>Password</h3>
-        <p className="font-normal">{keyItem.password}</p>
+        <div className="flex items-center gap-4">
+          <p className="font-normal">{keyItem.password}</p>
+          <CopyToClipboard content={keyItem.password} />
+        </div>
       </div>
 
       <div className="text-xl font-semibold mt-8">
