@@ -23,7 +23,7 @@ const SELECT_ICON = ({
       <ICON iconName={iconName} />
       <details>
         <div
-          className="max-w-[170px] p-2 rounded-xl flex items-center gap-4 flex-wrap"
+          className="max-w-[170px] p-2 rounded-xl flex justify-center items-center gap-4 flex-wrap"
           style={{
             backgroundColor: appTheme.secondary
               ? appTheme.secondary

@@ -22,5 +22,11 @@
     "secondary": "#450c13",
     "complementary": "#cc2137",
     "text": "#fff"
+  },
+  "alt-dark": {
+    "primary": "#0d1117",
+    "secondary": "#010409",
+    "complementary": "#202938",
+    "text": "#fff"
   }
 }

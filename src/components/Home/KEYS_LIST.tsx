@@ -25,7 +25,7 @@ const KEYS_LIST = ({ debounceSearch }: { debounceSearch: string }) => {
       <h2 className=" text-3xl font-bold">
         Hello, <span className="text-yellow-500">{userData.username}!</span>
       </h2>
-      <ul className="flex flex-col gap-4 overflow-auto md:flex-row md:flex-wrap">
+      <ul className="flex flex-col scrollbar max-h-[260px] gap-4 overflow-auto md:justify-center md:flex-row md:flex-wrap md:max-h-full">
         {keysItem.length > 0 ? (
           filteredArr.map((keyItem) => {
             return <KEY_ITEM keyItem={keyItem} handleDelete={handleDelete} />;

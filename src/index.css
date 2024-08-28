@@ -29,3 +29,8 @@ details > summary {
     scale: 0;
   }
 }
+
+.scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: white transparent;
+}

@@ -9,7 +9,7 @@ const Home = () => {
   const { search, setSearch, debouncedSearch } = useDebounceSearch(500);
 
   return (
-    <section className="min-h-[100dvh] w-full p-8 flex flex-col items-center justify-between">
+    <section className="h-[100dvh] w-full p-2 flex flex-col items-center justify-between">
       <SEARCH_BAR search={search} setSearch={setSearch} />
       <KEYS_LIST debounceSearch={debouncedSearch} />
       <div className="flex items-center w-full justify-between">

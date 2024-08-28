@@ -15,7 +15,7 @@ const KEY_ITEM = ({
   handleDelete: (id: string) => void;
 }) => {
   return (
-    <div className="flex items-center justify-between gap-2 p-4 border-4 border-[#9B9B9B] rounded-xl min-w-[300px]">
+    <div className="flex items-center justify-between gap-2 p-4 border-4 border-[#9B9B9B] rounded-xl min-w-[340px] max-w-[340px] h-[140px]">
       <ICON iconName={keyItem.icon} />
       <div className="flex flex-col items-center">
         <h2 className="text-lg font-bold">{keyItem.title}</h2>
