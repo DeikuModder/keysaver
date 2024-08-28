@@ -1,16 +1,24 @@
 import { faQuestion } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { checkUpdate } from "../../backend/checkUpdate";
 import tauriPackage from "../../../src-tauri/tauri.conf.json";
 
-const res = await checkUpdate();
-const currentVersion = `v${tauriPackage.package.version}`;
-
 const UPDATE_NOTIFICATION = () => {
-  const [show, setShow] = useState(
-    res?.data.tag_name === currentVersion ? false : true
-  );
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    const checkFn = async () => {
+      const res = await checkUpdate();
+      const currentVersion = `v${tauriPackage.package.version}`;
+
+      if (res?.data.tag_name !== currentVersion) {
+        setShow(true);
+      }
+    };
+
+    checkFn();
+  }, []);
 
   return (
     <>
