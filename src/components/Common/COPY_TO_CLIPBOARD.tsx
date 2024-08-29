@@ -11,12 +11,12 @@ const Copied = () => {
     <p
       style={{
         backgroundColor: "#60a0caa2",
-        padding: 6,
+        padding: 2,
         borderRadius: 16,
-        fontWeight: "bold",
+        fontWeight: "semi-bold",
       }}
     >
-      <FontAwesomeIcon icon={faClipboardCheck} /> Copied to clipboard!
+      <FontAwesomeIcon icon={faClipboardCheck} /> Copied
     </p>
   );
 };
