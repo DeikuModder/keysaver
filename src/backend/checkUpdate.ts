@@ -1,7 +1,7 @@
 import { Octokit } from "@octokit/core";
 
 const octokit = new Octokit({
-  auth: "${{ secrets.GITHUB_TOKEN }}",
+  auth: process.env.GITHUB_TOKEN,
 });
 
 export const checkUpdate = async () => {
