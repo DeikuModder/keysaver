@@ -42,6 +42,7 @@ const UPDATE_NOTIFICATION = () => {
               <div className="text-xl font-bold">
                 <a
                   href="https://github.com/DeikuModder/keysaver/releases/latest"
+                  target="_blank"
                   className="bg-emerald-500 p-1 px-4 rounded-xl text-black"
                 >
                   Download
