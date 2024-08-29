@@ -30,9 +30,10 @@ jobs:
       # for projects that use labels and PRs,
       # try https://github.com/mikepenz/release-changelog-builder-action instead
       # TODO: use API to collect commit messages
-      - name: Build Changelog
-        id: build_changelog
-        run: echo "changelog=- ADD CHANGELOG" >> $GITHUB_OUTPUT
+      - name: Release Changelog Builder
+  # You may pin to the exact commit or the version.
+  # uses: mikepenz/release-changelog-builder-action@f3fc77b47b74e78971fffecb2102ae6eac9a44d6
+        uses: mikepenz/release-changelog-builder-action@v5.0.0-rc02
 
       - name: Node.js setup
         uses: actions/setup-node@v4.0.3
