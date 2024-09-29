@@ -12,7 +12,7 @@ const UPDATE_NOTIFICATION = () => {
       const res = await checkUpdate();
       const currentVersion = `v${tauriPackage.package.version}`;
 
-      if (res?.data.tag_name !== currentVersion) {
+      if (res && res?.data.tag_name !== currentVersion) {
         setShow(true);
       }
     };
