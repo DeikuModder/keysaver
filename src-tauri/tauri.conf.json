@@ -8,7 +8,7 @@
   },
   "package": {
     "productName": "keysaver",
-    "version": "0.1.5"
+    "version": "0.1.6"
   },
   "tauri": {
     "allowlist": {
@@ -65,6 +65,7 @@
     "windows": [
       {
         "fullscreen": false,
+        "maximizable": true,
         "height": 600,
         "resizable": true,
         "title": "Keysaver",
