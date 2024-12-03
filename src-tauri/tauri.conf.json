@@ -65,7 +65,7 @@
     "windows": [
       {
         "fullscreen": false,
-        "maximizable": true,
+        "maximized": true,
         "height": 600,
         "resizable": true,
         "title": "Keysaver",
