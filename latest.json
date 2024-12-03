@@ -1,19 +1,19 @@
 {
-  "version": "0.1.5",
+  "version": "0.1.6",
   "notes": "",
-  "pub_date": "2024-12-03T19:25:47.682Z",
+  "pub_date": "2024-12-03T19:42:01.431Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTTFcyVlBERDBRTFVIcW9mL25oV0ZTb1dCUmtQdENNVC90eFM3cHNnY2lESXluSUlDN3VaMDJvNmZmb1VNRTE5eHhvbjdNL2FVbmxsU0kxb01pWUphbTJhSWUyZzM4WkFZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzMzMjUzNjY1CWZpbGU6a2V5c2F2ZXIuYXBwLnRhci5negp0UWdWNFdIbnNKSy94djRoQmtselpsWDRGdGtFcUszT0ZlQk5oOWw1UnlFY3FtclNjMVQvd1JRSlFDQkQ3Z0tuKzd0QiszMlE4UDhLc0FkeWVndkJBUT09Cg==",
-      "url": "https://github.com/DeikuModder/keysaver/releases/download/v0.1.5/keysaver_aarch64.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTTFcyVlBERDBRTGFqcGxhSGRCZWM3WDQ2ZVVkbHF1SzVSbGZOUit4Zm5kVFJnTE9uelNVZjBYL0hMdWd3OXhkSmJ4ZzdRUUQ5bFFjWWluVXFuK00ybE5weXhwV1NqdmdrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzMzMjU0NjcwCWZpbGU6a2V5c2F2ZXIuYXBwLnRhci5negpUYWVtZG5oN0I5T1FCeUw2U01za285Wk9tZlFsYk9DWlRraUhVWWVHUXpFcklCVUtLVlkwa0o2azZNYVNGTndvVTc0VTFGdkNHTFlEUzJ4V0ZhQXREZz09Cg==",
+      "url": "https://github.com/DeikuModder/keysaver/releases/download/v0.1.6/keysaver_aarch64.app.tar.gz"
     },
     "linux-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTTFcyVlBERDBRTFRGWUNTaGNWSWQrUE1zQmFUeGxlRUxIYTdHcCthcnRJcmRsVWJNT1JRajBieSs1TjRXRGdaS2cva2pUY3BaY2tnLzNpUVA4WHVrNVF2UzhBa3FWMWdVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzMzMjUzODEwCWZpbGU6a2V5c2F2ZXJfMC4xLjVfYW1kNjQuQXBwSW1hZ2UudGFyLmd6CjEyWHRwTEYxbTJMVGJGMy9ENGVBQ1ArcFJtTVRSVnlabWc4d05GaSs4bEMreXliRFVFZUFhS3FBZUMyekhCNit5TEx4WDBFVFZYQ3dHNGtYUlVUTUF3PT0K",
-      "url": "https://github.com/DeikuModder/keysaver/releases/download/v0.1.5/keysaver_0.1.5_amd64.AppImage.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTTFcyVlBERDBRTFUyTVFHK3NGNGM2SEhLWFQvdWFHVncwekpzK1FQZVRLNyt6Y1ZsL0tQZjJSTWZjVXcwdTNCQ1laeE83cXUza0RlYXUzTUNkajd1WVhMWDBTUjJpeGdJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzMzMjU0ODAxCWZpbGU6a2V5c2F2ZXJfMC4xLjZfYW1kNjQuQXBwSW1hZ2UudGFyLmd6CnUwR1BxclI5a2REVnVoYlV3RVVkUUJTNzNBcFhvVUVXblZSN2VCVWJBOUpvS3RxV0NzTW5VTW8vMW51UHEza3IyU3FsbnUxT24yTnFhRGFQaHR2NkJRPT0K",
+      "url": "https://github.com/DeikuModder/keysaver/releases/download/v0.1.6/keysaver_0.1.6_amd64.AppImage.tar.gz"
     },
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTTFcyVlBERDBRTFpONTJEa0hBQkFWeEFMSkV1ZHNtUWNBK0d0ZGwwQnk3UmlsVm05UmVkU1JBc1lFSTNUbk1vbml3UHpjdWp2emovcy9mTExRcHBNRnR3WU44cGkycmdrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzMzMjUzOTQyCWZpbGU6a2V5c2F2ZXJfMC4xLjVfeDY0X2VuLVVTLm1zaS56aXAKM1FVWjVNVkw4NTFCc05MTW0rUWtUZXcxSTZsQi82VmxDVWhiQU11b3lUS1pCZXFaVjJyOTl0VG0wdkxoMnV5QlREaFJraDdUWWlGMXJ0SnpFNHJpQVE9PQo=",
-      "url": "https://github.com/DeikuModder/keysaver/releases/download/v0.1.5/keysaver_0.1.5_x64_en-US.msi.zip"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTTFcyVlBERDBRTGFCYkdmRGhMSk1mRm9Xa29pNmUxR0kvVjhOak9lOEczL2VxU3RLeEdOd1NuQy9FaklxUzFjQlVEK0syTC9saXJueVRnRGpuL3hlWGYrYkxTN0xYUGdVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzMzMjU0OTE4CWZpbGU6a2V5c2F2ZXJfMC4xLjZfeDY0X2VuLVVTLm1zaS56aXAKV2V0MVl4aFR0UEpWR0RCMmtiTmh4eFExTU9IT1JHMUg0bFA0S3drRjBETDJnQnV1eHBQemgwRFR6NDRSUUdVejRNTjczaXk3UUtPT3NRZ05RYUduQmc9PQo=",
+      "url": "https://github.com/DeikuModder/keysaver/releases/download/v0.1.6/keysaver_0.1.6_x64_en-US.msi.zip"
     }
   }
 }
